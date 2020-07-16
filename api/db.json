@@ -1,0 +1,19 @@
+{
+  "prescriptions": [
+    {
+      "description": "Iron supplements. An iron supplement is absorbed best when taken 30 minutes before breakfast with a source of vitamin C",
+      "title": "Anemia Treatment",
+      "id": 1
+    },
+    {
+      "title": "Sleep Disorders treatment",
+      "description": "Developing good sleep habits can help. Changes in behavior",
+      "id": 2
+    },
+    {
+      "title": "vitamin C deficiency",
+      "description": " vitamin  c supplements",
+      "id": 6
+    }
+  ]
+}

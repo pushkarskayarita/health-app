@@ -1,0 +1,43 @@
+.icon-left {
+    position: absolute;
+    top: 130px;
+    left: 260px;
+}
+
+.time-period-display h1 {
+    font-size: 72px;
+}
+
+.time-period-display.day i {
+    color: #F44336;
+}
+
+.time-period-display.night i {
+    color: #52C7B8;
+}
+
+.time-period-display.day h1 {
+    color: #424242;
+}
+
+.time-period-display.night h1 {
+    color: #FAFAFA;
+}
+
+.time-period-display {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.day {
+    background-color: #FAFAFA;
+}
+
+.night {
+    background-color: #040C5B;
+}
+
+i.massive.moon.icon, i.massive.sun.icon {
+    font-size: 11em;
+}
