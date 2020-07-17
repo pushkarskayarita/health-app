@@ -8,8 +8,18 @@ a:hover{
    flex-wrap: wrap;
 }
 
-.content-container{
+.menu-container{
+   display: flex;
+   flex: 1;
+   max-width: 300px;
+   height: 1px;
+   min-height: 100vh;
+   position: relative;
+   overflow-y:auto ;
+}
 
+.content-container{
+    flex: 2;
 }
 
 

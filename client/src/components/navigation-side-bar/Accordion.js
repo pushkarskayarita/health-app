@@ -30,20 +30,19 @@ const Accordion = ({ items }) => {
 					{item.content.length ? <i className="dropdown icon" /> : null}
 					{item.title}
 				</div>
-				{item.content && item.content.length ? item.content.map(contentItem =>
-					<div key={contentItem}
-						 className={`content ${active}`}><p>{contentItem}</p></div>) : null}
+				<div className={`content ${active}`}>
+					{item.content && item.content.length ? item.content.map(contentItem =>
+						<p>{contentItem}</p>) : null}
+				</div>
+
 			</div>
 		);
 	});
 
 	return (
-
-		<div className="accordion-sidebar">
-			<div className="accordion-wrapper">
-				<div className="accordion">
-					{renderedItems}
-				</div>
+		<div className="accordion-wrapper">
+			<div className="accordion">
+				{renderedItems}
 			</div>
 		</div>
 	);

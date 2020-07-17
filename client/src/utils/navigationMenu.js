@@ -1,7 +1,7 @@
 export const menu = [
 	{
 		title: "Prescriptions",
-		content: [],
+		content: ["Prescription list"],
 	},
 	{
 		title: "Treatments",
@@ -20,7 +20,6 @@ export const menu = [
 	},
 	{
 		title: "Medical procedures",
-		content: [],
+		content: ["Medical procedures"],
 	}
-
 ];
