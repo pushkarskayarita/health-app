@@ -47,7 +47,6 @@ a:hover{
 
 .title:hover{
     background-color: #E0F2F1;
-    color:#212121;
 }
 
 .title.active{
@@ -79,6 +78,10 @@ a:hover{
     font-size: 16px;
     padding: 16px 0 16px 50px;
     margin: 0;
+}
+
+.content p:hover{
+    background-color: #E0F2F1;
 }
 
 .content.active{
