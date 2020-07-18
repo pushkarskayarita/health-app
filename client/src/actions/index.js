@@ -1,11 +1,26 @@
 import prescriptions from "../apis/prescriptions";
 import {
+	SIGN_IN,
+	SIGN_OUT,
 	CREATE_PRESCRIPTION,
 	FETCH_PRESCRIPTIONS,
 	FETCH_PRESCRIPTION,
 	EDIT_PRESCRIPTION,
 	DELETE_PRESCRIPTION
 } from "./types";
+
+export const signIn = (userId)=>{
+	return{
+		type: SIGN_IN,
+		payload:userId
+	}
+};
+
+export const signOut = () => {
+	return {
+		type: SIGN_OUT
+	};
+};
 
 export const createPrescription = (formValues) => async (dispatch) => {
 	let response = await prescriptions.post('/prescriptions', formValues);
@@ -51,3 +66,4 @@ export const deletePrescription = (id) =>  async (dispatch) => {
 		payload: id
 	});
 };
+
