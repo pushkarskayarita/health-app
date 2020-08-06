@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom'
 import GoogleAuth from "../google-auth/GoogleAuth";
 import Logo from './Logo'
 import styles from './Header.module.css'
@@ -7,7 +7,7 @@ import styles from './Header.module.css'
 function Header() {
 	return (
 		<div className={styles.headerContainer}>
-			<div className={styles.headerLogoContainer}><Logo/></div>
+			<Link to="/" className={styles.headerLogoContainer}><Logo/></Link>
 			<div className={styles.headerAuthContainer} >
 				<GoogleAuth />
 			</div>

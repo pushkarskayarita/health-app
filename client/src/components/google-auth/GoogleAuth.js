@@ -10,7 +10,7 @@ class GoogleAuth extends Component {
 	componentDidMount() {
 		window.gapi.load('client:auth2', () => {
 			window.gapi.client.init({
-				clientId,
+				clientId: clientId,
 				scope: 'email'
 			}).then(() => {
 				this.auth = window.gapi.auth2.getAuthInstance();
@@ -22,7 +22,7 @@ class GoogleAuth extends Component {
 
 	onAuthChange = (isSignedIn) => {
 		if (isSignedIn) {
-			this.props.signIn(this.auth.currentUser.get().getId);
+			this.props.signIn(this.auth.currentUser.get().getId());
 		} else {
 			this.props.signOut();
 		}
@@ -42,7 +42,7 @@ class GoogleAuth extends Component {
 		} else {
 			return (
 				<button onClick={this.onSignInClick}
-						className="ui   red google button">
+						className="ui red google button">
 					<i className=" google icon" />
 					Sign In with Google
 				</button>

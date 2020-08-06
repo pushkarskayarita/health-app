@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './Accordion.css';
+import {Link} from 'react-router-dom'
+import styles from './Accordion.module.css';
 
 const Accordion = ({ items }) => {
 	const [activeIndexes, setActiveIndexes] = useState([]);
@@ -21,16 +22,16 @@ const Accordion = ({ items }) => {
 		const isIndexExist = activeIndexes.includes(index);
 		const active = isIndexExist ? "active" : "";
 		return (
-			<div className="item"
+			<div className={`${styles.item}`}
 				 key={item.title}>
-				<div className={`title ${active}`}
+				<Link to={item.linkTo} className={`${styles.title} ${styles[active]}`}
 					 onClick={() => {
 						 onTitleClick(index);
 					 }}>
-					{item.content.length ? <i className="dropdown icon" /> : null}
+					{item.content.length ? <i className={`${styles.dropdown} ${styles.icon}` }/> : null}
 					{item.title}
-				</div>
-				<div className={`content ${active}`}>
+				</Link>
+				<div className={`${styles.content} ${styles[active]}`}>
 					{item.content && item.content.length ? item.content.map(contentItem =>
 						<p>{contentItem}</p>) : null}
 				</div>
@@ -40,8 +41,8 @@ const Accordion = ({ items }) => {
 	});
 
 	return (
-		<div className="accordion-wrapper">
-			<div className="accordion">
+		<div className={`${styles.wrapper}`}>
+			<div className={`${styles.accordion}`}>
 				{renderedItems}
 			</div>
 		</div>

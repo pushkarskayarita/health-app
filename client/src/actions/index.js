@@ -9,11 +9,11 @@ import {
 	DELETE_PRESCRIPTION
 } from "./types";
 
-export const signIn = (userId)=>{
-	return{
+export const signIn = (userId) => {
+	return {
 		type: SIGN_IN,
-		payload:userId
-	}
+		payload: userId
+	};
 };
 
 export const signOut = () => {
@@ -22,13 +22,17 @@ export const signOut = () => {
 	};
 };
 
-export const createPrescription = (formValues) => async (dispatch) => {
-	let response = await prescriptions.post('/prescriptions', formValues);
+export const createPrescription = (formValues,history) => async (dispatch, getState) => {
+	const { userId } = getState().auth;
+	let response = await prescriptions.post('/prescriptions', {...formValues, userId});
 
 	dispatch({
 		type: CREATE_PRESCRIPTION,
 		payload: response.data
 	});
+
+	history.push('/')
+	//Do some programatic navigation to get yhe userback to the root route
 };
 
 export const fetchPrescriptions = () => async (dispatch) => {
@@ -49,16 +53,18 @@ export const fetchPrescription = (id) => async (dispatch) => {
 	});
 };
 
-export const editPrescription = (id, formValues) => async (dispatch) => {
-	let response = await prescriptions.put(`/prescriptions/${id}`,formValues);
+export const editPrescription = (id, formValues, history) => async (dispatch) => {
+	let response = await prescriptions.patch(`/prescriptions/${id}`, formValues);
 
 	dispatch({
 		type: EDIT_PRESCRIPTION,
 		payload: response.data,
 	});
+	console.log("History action",history);
+	history.push('/')
 };
 
-export const deletePrescription = (id) =>  async (dispatch) => {
+export const deletePrescription = (id) => async (dispatch) => {
 	await prescriptions.delete(`/prescriptions/${id}`);
 
 	dispatch({

@@ -6,11 +6,7 @@ a{
     color: inherit;
 }
 
-a:hover{
-    color: #FAFAFA;
-}
-
-.accordion-wrapper {
+.wrapper {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -53,7 +49,7 @@ a:hover{
     background-color: #009688;
     color: #FAFAFA;
     /*color: #009688;*/
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .item .icon{
@@ -69,6 +65,7 @@ a:hover{
 
 .content {
     opacity: 0;
+    display: none;
     max-height: 0;
     overflow: hidden;
     transition: all 0.2s linear;
@@ -85,6 +82,8 @@ a:hover{
 }
 
 .content.active{
+    display: block;
     max-height: 100%;
     opacity: 1;
+
 }

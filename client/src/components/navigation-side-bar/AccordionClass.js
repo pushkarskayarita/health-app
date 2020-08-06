@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Accordion.css';
+import './Accordion.module.css';
 
 class AccordionClass extends Component {
 
@@ -50,7 +50,7 @@ class AccordionClass extends Component {
 	render() {
 		return (
 			<div className="accordion-sidebar">
-				<div className="accordion-wrapper">
+				<div className="wrapper">
 					<div className='accordion'>
 						{this.renderedItems()}
 					</div>
