@@ -11,7 +11,6 @@ export const menu = [
 			"Archive treatment"
 		],
 		linkTo:"/"
-
 	},
 	{
 		title: "Medications",

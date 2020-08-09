@@ -3,7 +3,7 @@ import './TimePeriodDispaly.css';
 
 const timePeriodConfig = {
 	day: {
-		text: "Creative time",
+		text: "Creative value",
 		iconName: "sun"
 	},
 	night: {

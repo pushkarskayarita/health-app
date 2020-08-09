@@ -1,12 +1,10 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import styles from './PrescriptionForm.module.css'
-import sharedStyles from './Prescription.module.css'
 
 class PrescriptionForm extends React.Component {
 
 	renderError = ({ error, touched }) => {
-		console.log(touched);
 		if (touched && error) {
 			return (
 				<div className={`${styles.error} ${styles.message}`}>
@@ -34,7 +32,6 @@ class PrescriptionForm extends React.Component {
 	};
 
 	render() {
-		console.log("PROPS", this.props.history);
 		return (
 			<form onSubmit={this.props.handleSubmit(this.onSubmit)}
 				  className={` ${styles.form} error`}>
@@ -45,7 +42,7 @@ class PrescriptionForm extends React.Component {
 				<Field name="description"
 					   component={this.renderInput}
 					   label="Enter Description" />
-				<button className={`${sharedStyles.button} ${sharedStyles.primary}`}>Submit</button>
+				<button className={`${styles.button} ${styles.primary}`}>Submit</button>
 			</form>
 		);
 	}
@@ -54,6 +51,7 @@ class PrescriptionForm extends React.Component {
 const validate = (formValues) => {
 	const errors = {};
 	if (!formValues.title) {
+
 		errors.title = "You must enter a title";
 	}
 	if (!formValues.description) {

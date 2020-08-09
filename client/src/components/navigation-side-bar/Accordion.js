@@ -33,7 +33,7 @@ const Accordion = ({ items }) => {
 				</Link>
 				<div className={`${styles.content} ${styles[active]}`}>
 					{item.content && item.content.length ? item.content.map(contentItem =>
-						<p>{contentItem}</p>) : null}
+						<p key={contentItem}>{contentItem}</p>) : null}
 				</div>
 
 			</div>
